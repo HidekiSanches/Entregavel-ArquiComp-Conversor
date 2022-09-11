@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de bases</title>
+<style>
+    body {
+        width: 80%;
+        margin: auto;
+    }
+    .header {
+        border-bottom: solid 3px white;
+        font-family: sans-serif;
+        display: flex;
+    }
+    .header .title {
+        padding: 5px 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+</style>
+</head>
+
+    <body style= "background-color: black; color: white">
+
+        <div class="header">
+            <img src="https://icones.pro/wp-content/uploads/2021/06/icone-de-la-calculatrice-violet.png" alt="img_binario" width="100px">
+            <div class="title">
+                <h1>Conversor de bases</h1>
+            </div> 
+        </div>
+
+
+    
+
+        <h3>Inserir o valor em decimal:</h3>
+        <input id="demo1" type="text" placeholder="Inserir aqui..." autofocus>
+        <br><br>
+
+        <h3>converter para:</h3>
+        <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
+        <br>
+        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;" id="demo2"></div>
+
+        <br>
+        <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
+        <br>
+        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;" id="demo3"></div>
+        <br>
+
+        <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
+        <br>
+        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;" id="demo4"></div>
+
+        <br><br>
+
+        <button onclick="converter()">Converter</button>
+
+    </body>
+
+
+</html>
+<script>
+
+    function converter() {
+        
+        var decimal = Number (demo1.value);
+
+    let octal = decimal.toString(8);
+
+    let hexadecimal = decimal.toString(16);
+
+    let binaria = decimal.toString(2);
+
+    console.log (decimal);
+    console.log (octal);
+    console.log (hexadecimal);
+    console.log (binaria);
+
+    document.getElementById("demo1").innerHTML = ` ${decimal}`;
+    document.getElementById("demo2").innerHTML = ` ${octal}`;
+    document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+    document.getElementById("demo4").innerHTML = ` ${binaria}`;
+
+    }
+
+    function aparecer_bin() {
+        demo4.style.display = 'block'
+    }
+
+    function aparecer_hexa() {
+        demo3.style.display = 'block'
+    }
+
+    function aparecer_octal() {
+        demo2.style.display = 'block'
+    }
+    document.bgColor = "#597d6c";
+</script>
